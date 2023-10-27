@@ -9,6 +9,9 @@ public class Game extends PApplet {
     Tower[] towers;
     ArrayList<Tank> tanks;
 
+    static ArrayList<Bullet> bullets;
+    static boolean makeBulletsMove;
+
     static int timer;
     int tankNum;
     public void settings() {
@@ -25,6 +28,7 @@ public class Game extends PApplet {
 
         //SETTING UP THE TOWERS------------------------------
         towers = new Tower[8];
+        bullets = new ArrayList<Bullet>();
         int i = 1;
         for(int t = 0; t<towers.length/2;t++){
             towers[t] = new Tower(i*100, 200-40);
@@ -70,6 +74,14 @@ public class Game extends PApplet {
             tanks.get(i).draw(this);
             tanks.get(i).move();
         }
+
+        if(makeBulletsMove){
+            for (int i = 0; i < bullets.size(); i++) {
+                bullets.get(i).move();
+            }
+        }
+
+
 
 
 

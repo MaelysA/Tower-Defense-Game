@@ -14,8 +14,10 @@ public class Tower {
 
     public void shoot(PApplet window){
         if(y>=400){
-            Bullet bullet = new Bullet(x+20,y+40, 3);
+            Bullet bullet = new Bullet(x+20,y-10, 3);
+            Game.bullets.add(bullet);
             bullet.draw(window );
+            Game.makeBulletsMove = true;
         }else{
             Bullet bullet = new Bullet(x+20,y+40, -3);
             bullet.draw(window );

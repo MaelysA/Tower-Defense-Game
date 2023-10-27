@@ -23,7 +23,7 @@ public class Bullet {
 
     public void draw(PApplet window){
         window.fill(244,4,244);
-        window.rect(x,y,5,5);
+        window.rect(x,y,10,10);
 
     }
 
